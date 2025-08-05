@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Roshan Raj | Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+
+    tailwind.config = {
+
+      darkMode: 'class',
+
+      theme: {
+
+        extend: {
+
+          colors: {
+
+            primary: '#0F172A',
+
+            secondary: '#0F172A',
+
+            accent: '#22D3EE',
+
+            softText: '#F4F4F4',
+
+            muted: '#64748B'
+
+          },
+
+          fontFamily: {
+
+            sans: ['Inter', 'sans-serif']
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+  <style>
+
+    @keyframes fade-in-down {
+
+      0% {
+
+        opacity: 0;
+
+        transform: translateY(-20px);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+    .animate-fade-in-down {
+
+      animation: fade-in-down 0.6s ease-out;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    .glow-text {
+
+      text-shadow: 0 0 2px #22D3EE88;
+
+    }
+
+    .hero-bg {
+
+      background: radial-gradient(circle at 20% 20%, #22D3EE22, transparent 60%), radial-gradient(circle at 80% 80%, #22D3EE11, transparent 70%);
+
+    }
+
+    
+
+    /* Mobile menu styles */
+
+    .mobile-menu {
+
+      transform: translateX(100%);
+
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .mobile-menu.open {
+
+      transform: translateX(0);
+
+    }
+
+    
+
+    /* Hamburger animation */
+
+    .hamburger {
+
+      cursor: pointer;
+
+    }
+
+    .hamburger span {
+
+      display: block;
+
+      width: 25px;
+
+      height: 3px;
+
+      background: #22D3EE;
+
+      margin: 5px 0;
+
+      transition: 0.3s;
+
+    }
+
+    .hamburger.active span:nth-child(1) {
+
+      transform: rotate(-45deg) translate(-5px, 6px);
+
+    }
+
+    .hamburger.active span:nth-child(2) {
+
+      opacity: 0;
+
+    }
+
+    .hamburger.active span:nth-child(3) {
+
+      transform: rotate(45deg) translate(-5px, -6px);
+
+    }
+
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const typed = new Typed(".typing-text", {
+
+        strings: ["Passionate Developer", "Problem Solver", "Tech Explorer"],
+
+        typeSpeed: 60,
+
+        backSpeed: 40,
+
+        backDelay: 2000,
+
+        loop: true
+
+      });
+
+    });
+
+  </script>
+
+</head>
+
+
+
+<body class="bg-primary text-softText font-sans transition duration-500 ease-in-out">
+
+  <!-- Navbar -->
+
+  <nav class="bg-secondary sticky top-0 z-50 shadow-xl transition-all duration-500 ease-in-out">
+
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center animate-fade-in-down">
+
+      <h1 class="text-lg sm:text-xl font-bold text-accent glow-text">Roshan Raj</h1>
+
+      
+
+      <!-- Desktop Menu -->
+
+      <div class="hidden md:flex space-x-6 text-sm">
+
+        <a href="#about" class="text-softText hover:text-accent transition">About</a>
+
+        <a href="#projects" class="text-softText hover:text-accent transition">Projects</a>
+
+        <a href="#experience" class="text-softText hover:text-accent transition">Experience</a>
+
+        <a href="#skills" class="text-softText hover:text-accent transition">Skills</a>
+
+        <a href="#contact" class="text-softText hover:text-accent transition">Contact</a>
+
+      </div>
+
+      
+
+      <!-- Mobile Menu Button -->
+
+      <div class="md:hidden hamburger" id="hamburger">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </div>
+
+    </div>
+
+    
+
+    <!-- Mobile Menu -->
+
+    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-secondary shadow-2xl z-40 md:hidden" id="mobileMenu">
+
+      <div class="flex flex-col p-6 pt-20 space-y-6">
+
+        <a href="#hero" class="text-softText hover:text-accent transition text-lg mobile-link">Home</a>
+
+        <a href="#journey" class="text-softText hover:text-accent transition text-lg mobile-link">About</a>
+
+        <a href="#projects" class="text-softText hover:text-accent transition text-lg mobile-link">Projects</a>
+
+        <a href="#experience" class="text-softText hover:text-accent transition text-lg mobile-link">Experience</a>
+
+        <a href="#skills" class="text-softText hover:text-accent transition text-lg mobile-link">Skills</a>
+
+        <a href="#contact" class="text-softText hover:text-accent transition text-lg mobile-link">Contact</a>
+
+      </div>
+
+    </div>
+
+    
+
+    <!-- Mobile Menu Overlay -->
+
+    <div class="mobile-overlay fixed inset-0 bg-black bg-opacity-50 z-30 hidden" id="mobileOverlay"></div>
+
+  </nav>
+
+
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16 sm:space-y-24" data-fade>
+
+    <!-- Hero Section -->
+
+    <section id="hero" class="hero-bg flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 rounded-xl p-4 sm:p-6 md:p-10 shadow-lg" data-fade>
+
+      <div class="w-full md:w-2/3 text-center md:text-left order-2 md:order-1">
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-softText mb-3 sm:mb-4">Hello, It's Me</h1>
+
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-accent mb-3 sm:mb-4">Roshan Raj</h2>
+
+        <h3 class="text-lg sm:text-xl lg:text-2xl text-muted mb-4 sm:mb-6">And I'm a <span class="typing-text text-accent"></span></h3>
+
+        <p class="text-sm sm:text-base text-muted mb-4 sm:mb-6 leading-relaxed">Computer Science undergraduate at IIT Bhilai. I build user-focused websites, solve complex coding problems, and love turning real-world needs into code-based solutions.</p>
+
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+
+          <a href="mailto:roshanraj9136@gmail.com" class="bg-accent text-primary font-semibold px-4 sm:px-6 py-2 rounded-full hover:opacity-90 transition text-sm sm:text-base">Email Me</a>
+
+          <a href="https://github.com/roshanraj9136" target="_blank" class="border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">GitHub</a>
+
+          <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">LeetCode</a>
+
+          <a href="resume.pdf" download class="bg-transparent border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">Download CV</a>
+
+        </div>
+
+      </div>
+
+      <div class="w-full md:w-1/3 order-1 md:order-2 flex justify-center">
+
+        <div class="relative w-48 h-48 sm:w-60 sm:h-60">
+
+          <img src="roshanr.jpg" alt="Roshan Raj" class="w-full h-full object-cover rounded-2xl border-2 border-accent/40 shadow-md hover:scale-105 transition duration-300">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Journey Section -->
+
+    <section id="journey" data-fade>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">My Journey</h2>
+
+      <div class="space-y-4 sm:space-y-6">
+
+        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
+
+          I come from a modest background with big dreams. My passion for computers sparked early, but it was at IIT Bhilai where I truly dived deep into the world of technology.
+
+        </p>
+
+        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
+
+          I've built projects ranging from portfolio websites to institution-level platforms, mentored budding engineers, and sharpened my problem-solving skills by tackling 450+ DSA challenges. Each line of code tells a story of persistence and curiosity.
+
+        </p>
+
+        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
+
+          Beyond coding, I believe in learning by building and sharing. My mission is simple — to create elegant tech that empowers lives and uplifts communities.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Projects -->
+
+    <section id="projects" data-fade>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-6 sm:mb-8 glow-text">Projects</h2>
+
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+
+        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300">
+
+          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">Meru Conference Website</h3>
+
+          <p class="text-muted text-sm sm:text-base mb-3">Built and maintained the official site for Meru 2026 hosted by IIT Bhilai.</p>
+
+          <p class="text-xs sm:text-sm text-gray-400 mb-2">HTML, CSS, JavaScript</p>
+
+          <a href="https://github.com/KartikeyaNainkhwal/IIT-Bhilai-Meru-Conference" target="_blank" class="text-accent text-xs sm:text-sm hover:underline inline-block">GitHub Repo</a>
+
+        </div>
+
+        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300">
+
+          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">Portfolio Website</h3>
+
+          <p class="text-muted text-sm sm:text-base mb-3">This very site! Designed to showcase my journey, skills, and work beautifully.</p>
+
+          <p class="text-xs sm:text-sm text-gray-400">HTML, Tailwind CSS</p>
+
+        </div>
+
+        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300 sm:col-span-1 md:col-span-2 lg:col-span-1">
+
+          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">NSS Events Page</h3>
+
+          <p class="text-muted text-sm sm:text-base mb-3">Revamped and deployed the NSS IIT Bhilai event update page for clarity and responsiveness.</p>
+
+          <p class="text-xs sm:text-sm text-gray-400">HTML, CSS</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Experience -->
+
+    <section id="experience" data-fade>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Experience</h2>
+
+      <div class="space-y-3 sm:space-y-4">
+
+        <div class="border-l-2 border-accent pl-4 sm:pl-6">
+
+          <h3 class="font-semibold text-softText text-base sm:text-lg">Website Developer</h3>
+
+          <p class="text-muted text-sm sm:text-base">Meru Conference, IIT Bhilai 2026</p>
+
+        </div>
+
+        <div class="border-l-2 border-accent pl-4 sm:pl-6">
+
+          <h3 class="font-semibold text-softText text-base sm:text-lg">Polestar Mentor</h3>
+
+          <p class="text-muted text-sm sm:text-base">Mentored JEE/NEET aspirants through Openlink Foundation</p>
+
+        </div>
+
+        <div class="border-l-2 border-accent pl-4 sm:pl-6">
+
+          <h3 class="font-semibold text-softText text-base sm:text-lg">NSS Volunteer</h3>
+
+          <p class="text-muted text-sm sm:text-base">Led community drives, awareness campaigns, and events</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Skills -->
+
+    <section id="skills" data-fade>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Technical Skills</h2>
+
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-muted">
+
+        <div class="space-y-3">
+
+          <div class="border-l-2 border-accent pl-4">
+
+            <strong class="text-softText">Languages:</strong> C, C++
+
+          </div>
+
+          <div class="border-l-2 border-accent pl-4">
+
+            <strong class="text-softText">Web:</strong> HTML, CSS, JavaScript
+
+          </div>
+
+        </div>
+
+        <div class="space-y-3">
+
+          <div class="border-l-2 border-accent pl-4">
+
+            <strong class="text-softText">Tools:</strong> Git, GitHub, Docker
+
+          </div>
+
+          <div class="border-l-2 border-accent pl-4">
+
+            <strong class="text-softText">Concepts:</strong> OS, Networking, Algorithms
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Contact -->
+
+    <section id="contact" data-fade>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Contact</h2>
+
+      <p class="text-muted mb-2 text-sm sm:text-base">Let's connect and build something amazing.</p>
+
+      <p class="text-sm sm:text-base mb-4">Email: <a href="mailto:roshanraj9136@gmail.com" class="text-accent underline break-all">roshanraj9136@gmail.com</a></p>
+
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 text-accent">
+
+        <a href="https://github.com/roshanraj9136" target="_blank" class="hover:underline text-sm sm:text-base">GitHub</a>
+
+        <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="hover:underline text-sm sm:text-base">LeetCode</a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer class="text-center text-xs py-4 sm:py-6 bg-secondary border-t border-gray-700 text-muted">
+
+    © 2025 Roshan Raj — Built with Tailwind CSS & AOS
+
+  </footer>
+
+
+
+  <!-- Scroll Progress Bar -->
+
+  <div class="fixed top-0 left-0 h-1 bg-accent z-50" id="scroll-progress"></div>
+
+
+
+  <script>
+
+    AOS.init({ 
+
+      duration: 1000,
+
+      once: true,
+
+      offset: 50
+
+    });
+
+
+
+    // Mobile menu functionality
+
+    const hamburger = document.getElementById('hamburger');
+
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+
+
+    function toggleMobileMenu() {
+
+      hamburger.classList.toggle('active');
+
+      mobileMenu.classList.toggle('open');
+
+      mobileOverlay.classList.toggle('hidden');
+
+      document.body.classList.toggle('overflow-hidden');
+
+    }
+
+
+
+    function closeMobileMenu() {
+
+      hamburger.classList.remove('active');
+
+      mobileMenu.classList.remove('open');
+
+      mobileOverlay.classList.add('hidden');
+
+      document.body.classList.remove('overflow-hidden');
+
+    }
+
+
+
+    hamburger.addEventListener('click', toggleMobileMenu);
+
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    
+
+    mobileLinks.forEach(link => {
+
+      link.addEventListener('click', closeMobileMenu);
+
+    });
+
+
+
+    // Scroll progress bar
+
+    window.addEventListener('scroll', () => {
+
+      const scrollProgress = document.getElementById('scroll-progress');
+
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+
+      const progress = (window.scrollY / totalHeight) * 100;
+
+      scrollProgress.style.width = progress + '%';
+
+    });
+
+
+
+    // Parallax effect on scroll for hero section (disabled on mobile for performance)
+
+    if (window.innerWidth > 768) {
+
+      window.addEventListener('scroll', () => {
+
+        const hero = document.getElementById('hero');
+
+        if (hero) {
+
+          const offset = window.scrollY;
+
+          hero.style.transform = translateY(${offset * 0.1}px);
+
+        }
+
+      });
+
+    }
+
+
+
+    // Fade in elements on scroll
+
+    const fadeEls = document.querySelectorAll('[data-fade]');
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+
+        }
+
+      });
+
+    }, { threshold: 0.1 });
+
+
+
+    fadeEls.forEach(el => {
+
+      el.classList.add('opacity-0', 'translate-y-10', 'transition', 'duration-700');
+
+      observer.observe(el);
+
+    });
+
+
+
+    // Handle window resize
+
+    window.addEventListener('resize', () => {
+
+      if (window.innerWidth >= 768) {
+
+        closeMobileMenu();
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+
+
+</html>
