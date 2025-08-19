@@ -1,679 +1,1026 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Roshan Raj | Portfolio</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <script>
-
-    tailwind.config = {
-
-      darkMode: 'class',
-
-      theme: {
-
-        extend: {
-
-          colors: {
-
-            primary: '#0F172A',
-
-            secondary: '#0F172A',
-
-            accent: '#22D3EE',
-
-            softText: '#F4F4F4',
-
-            muted: '#64748B'
-
-          },
-
-          fontFamily: {
-
-            sans: ['Inter', 'sans-serif']
-
-          }
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Raj | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a0a0a',
+                        secondary: '#1a1a1a',
+                        accent: '#00d4ff',
+                        accentDark: '#0099cc',
+                        softText: '#f8f9fa',
+                        muted: '#8892b0',
+                        cardBg: '#112240',
+                        success: '#64ffda'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out'
+                    }
+                }
+            }
         }
-
-      }
-
-    }
-
-  </script>
-
-  <style>
-
-    @keyframes fade-in-down {
-
-      0% {
-
-        opacity: 0;
-
-        transform: translateY(-20px);
-
-      }
-
-      100% {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
-    }
-
-    .animate-fade-in-down {
-
-      animation: fade-in-down 0.6s ease-out;
-
-    }
-
-    html {
-
-      scroll-behavior: smooth;
-
-    }
-
-    .glow-text {
-
-      text-shadow: 0 0 2px #22D3EE88;
-
-    }
-
-    .hero-bg {
-
-      background: radial-gradient(circle at 20% 20%, #22D3EE22, transparent 60%), radial-gradient(circle at 80% 80%, #22D3EE11, transparent 70%);
-
-    }
-
-    
-
-    /* Mobile menu styles */
-
-    .mobile-menu {
-
-      transform: translateX(100%);
-
-      transition: transform 0.3s ease-in-out;
-
-    }
-
-    .mobile-menu.open {
-
-      transform: translateX(0);
-
-    }
-
-    
-
-    /* Hamburger animation */
-
-    .hamburger {
-
-      cursor: pointer;
-
-    }
-
-    .hamburger span {
-
-      display: block;
-
-      width: 25px;
-
-      height: 3px;
-
-      background: #22D3EE;
-
-      margin: 5px 0;
-
-      transition: 0.3s;
-
-    }
-
-    .hamburger.active span:nth-child(1) {
-
-      transform: rotate(-45deg) translate(-5px, 6px);
-
-    }
-
-    .hamburger.active span:nth-child(2) {
-
-      opacity: 0;
-
-    }
-
-    .hamburger.active span:nth-child(3) {
-
-      transform: rotate(45deg) translate(-5px, -6px);
-
-    }
-
-  </style>
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-
-
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-      const typed = new Typed(".typing-text", {
-
-        strings: ["Passionate Developer", "Problem Solver", "Tech Explorer"],
-
-        typeSpeed: 60,
-
-        backSpeed: 40,
-
-        backDelay: 2000,
-
-        loop: true
-
-      });
-
-    });
-
-  </script>
-
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #00d4ff40;
+            }
+            to {
+                text-shadow: 0 0 30px #00d4ff80, 0 0 40px #00d4ff40;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #00d4ff10, transparent 70%), radial-gradient(circle at 80% 20%, #00d4ff08, transparent 50%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+        
+        .skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            transition: width 2s ease-in-out;
+        }
+        
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%,
+            50% {
+                opacity: 1;
+            }
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        .glass-effect {
+            background: rgba(17, 34, 64, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card {
+            background: linear-gradient(145deg, #112240, #0a192f);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .achievement-badge {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.1) rotateY(10deg);
+        }
+        
+        .progress-ring {
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+    </style>
 </head>
 
+<body class="gradient-bg text-softText font-sans overflow-x-hidden">
+    <!-- Fixed Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="text-accent animate-glow">&lt;</span>
+                    <span class="text-softText">Roshan</span>
+                    <span class="text-accent animate-glow">/&gt;</span>
+                </div>
 
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-softText hover:text-accent transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-softText hover:text-accent transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-softText hover:text-accent transition-colors">Projects</a>
+                    <a href="#experience" class="nav-link text-softText hover:text-accent transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link text-softText hover:text-accent transition-colors">Skills</a>
+                    <a href="#contact" class="nav-link text-softText hover:text-accent transition-colors">Contact</a>
+                </div>
 
-<body class="bg-primary text-softText font-sans transition duration-500 ease-in-out">
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-accent" id="mobile-menu-btn">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+            </div>
+        </div>
 
-  <!-- Navbar -->
-
-  <nav class="bg-secondary sticky top-0 z-50 shadow-xl transition-all duration-500 ease-in-out">
-
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center animate-fade-in-down">
-
-      <h1 class="text-lg sm:text-xl font-bold text-accent glow-text">Roshan Raj</h1>
-
-      
-
-      <!-- Desktop Menu -->
-
-      <div class="hidden md:flex space-x-6 text-sm">
-
-        <a href="#about" class="text-softText hover:text-accent transition">About</a>
-
-        <a href="#projects" class="text-softText hover:text-accent transition">Projects</a>
-
-        <a href="#experience" class="text-softText hover:text-accent transition">Experience</a>
-
-        <a href="#skills" class="text-softText hover:text-accent transition">Skills</a>
-
-        <a href="#contact" class="text-softText hover:text-accent transition">Contact</a>
-
-      </div>
-
-      
-
-      <!-- Mobile Menu Button -->
-
-      <div class="md:hidden hamburger" id="hamburger">
-
-        <span></span>
-
-        <span></span>
-
-        <span></span>
-
-      </div>
-
-    </div>
-
-    
-
-    <!-- Mobile Menu -->
-
-    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-secondary shadow-2xl z-40 md:hidden" id="mobileMenu">
-
-      <div class="flex flex-col p-6 pt-20 space-y-6">
-
-        <a href="#hero" class="text-softText hover:text-accent transition text-lg mobile-link">Home</a>
-
-        <a href="#journey" class="text-softText hover:text-accent transition text-lg mobile-link">About</a>
-
-        <a href="#projects" class="text-softText hover:text-accent transition text-lg mobile-link">Projects</a>
-
-        <a href="#experience" class="text-softText hover:text-accent transition text-lg mobile-link">Experience</a>
-
-        <a href="#skills" class="text-softText hover:text-accent transition text-lg mobile-link">Skills</a>
-
-        <a href="#contact" class="text-softText hover:text-accent transition text-lg mobile-link">Contact</a>
-
-      </div>
-
-    </div>
-
-    
-
-    <!-- Mobile Menu Overlay -->
-
-    <div class="mobile-overlay fixed inset-0 bg-black bg-opacity-50 z-30 hidden" id="mobileOverlay"></div>
-
-  </nav>
-
-
-
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16 sm:space-y-24" data-fade>
+        <!-- Mobile Menu -->
+        <div class="md:hidden glass-effect" id="mobile-menu" style="display: none;">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block text-softText hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="block text-softText hover:text-accent transition-colors">About</a>
+                <a href="#projects" class="block text-softText hover:text-accent transition-colors">Projects</a>
+                <a href="#experience" class="block text-softText hover:text-accent transition-colors">Experience</a>
+                <a href="#skills" class="block text-softText hover:text-accent transition-colors">Skills</a>
+                <a href="#contact" class="block text-softText hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center hero-gradient pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
 
-    <section id="hero" class="hero-bg flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 rounded-xl p-4 sm:p-6 md:p-10 shadow-lg" data-fade>
+                <!-- Left Content -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <div class="text-accent font-mono text-lg">Hi, my name is</div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-softText animate-glow">
+                        Roshan Raj
+                    </h1>
+                    <h2 class="text-3xl md:text-5xl font-bold text-muted">
+                        <span id="typed-text"></span>
+                    </h2>
+                    <p class="text-xl text-muted max-w-lg leading-relaxed">
+                        Computer Science undergraduate at <span class="text-accent font-semibold">IIT Bhilai</span>. I create exceptional digital experiences that solve real-world problems.
+                    </p>
 
-      <div class="w-full md:w-2/3 text-center md:text-left order-2 md:order-1">
+                    <!-- Achievement Badges -->
+                    <div class="flex flex-wrap gap-4 py-4">
+                        <div class="achievement-badge px-4 py-2 rounded-full text-primary font-semibold text-sm">
+                            <i class="fas fa-code mr-2"></i>450+ DSA Problems
+                        </div>
+                        <div class="achievement-badge px-4 py-2 rounded-full text-primary font-semibold text-sm">
+                            <i class="fas fa-graduation-cap mr-2"></i>IIT Bhilai
+                        </div>
+                        <div class="achievement-badge px-4 py-2 rounded-full text-primary font-semibold text-sm">
+                            <i class="fas fa-users mr-2"></i>Mentor
+                        </div>
+                    </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-softText mb-3 sm:mb-4">Hello, It's Me</h1>
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects" class="bg-accent text-primary px-8 py-3 rounded-lg font-semibold hover:bg-accentDark transition-colors">
+                        View My Work
+                    </a>
+                        <a href="#contact" class="border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>Contact Me
+                        </a>
+                        <a href="https://drive.google.com/uc?export=download&id=1koOQMd8C-EWMt9z5SkM0FYuKqrT3NT4_" target="_blank" class="border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-colors">
+                            <i class="fas fa-file-alt mr-2"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
 
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-accent mb-3 sm:mb-4">Roshan Raj</h2>
+                <!-- Right Content: Image -->
+                <div class="flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-r from-accent to-accentDark p-1 animate-float">
+                            <div class="w-full h-full bg-gradient-to-br from-accent/20 to-accentDark/20 rounded-full flex items-center justify-center overflow-hidden">
+                                <img src="roshanr.jpg" alt="Roshan Raj" class="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500" />
+                            </div>
+                        </div>
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-ping"></div>
+                        <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-success rounded-full animate-pulse"></div>
+                    </div>
+                </div>
 
-        <h3 class="text-lg sm:text-xl lg:text-2xl text-muted mb-4 sm:mb-6">And I'm a <span class="typing-text text-accent"></span></h3>
-
-        <p class="text-sm sm:text-base text-muted mb-4 sm:mb-6 leading-relaxed">Computer Science undergraduate at IIT Bhilai. I build user-focused websites, solve complex coding problems, and love turning real-world needs into code-based solutions.</p>
-
-        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
-
-          <a href="mailto:roshanraj9136@gmail.com" class="bg-accent text-primary font-semibold px-4 sm:px-6 py-2 rounded-full hover:opacity-90 transition text-sm sm:text-base">Email Me</a>
-
-          <a href="https://github.com/roshanraj9136" target="_blank" class="border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">GitHub</a>
-
-          <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">LeetCode</a>
-
-          <a href="resume.pdf" download class="bg-transparent border border-accent text-accent font-semibold px-4 sm:px-6 py-2 rounded-full hover:bg-accent hover:text-primary transition text-sm sm:text-base">Download CV</a>
-
+            </div>
         </div>
-
-      </div>
-
-      <div class="w-full md:w-1/3 order-1 md:order-2 flex justify-center">
-
-        <div class="relative w-48 h-48 sm:w-60 sm:h-60">
-
-          <img src="roshanr.jpg" alt="Roshan Raj" class="w-full h-full object-cover rounded-2xl border-2 border-accent/40 shadow-md hover:scale-105 transition duration-300">
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-softText mb-4">
+                    About <span class="text-accent">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
 
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <p class="text-lg text-muted leading-relaxed">
+                        I come from a modest background with big dreams. My passion for technology ignited early, but it was at <span class="text-accent font-semibold">IIT Bhilai</span> where I truly immersed myself in the world of software development.
+                    </p>
+                    <p class="text-lg text-muted leading-relaxed">
+                        I've built projects ranging from portfolio websites to institution-level platforms, mentored aspiring engineers, and sharpened my problem-solving skills by tackling
+                        <span class="text-success font-semibold">450+ DSA challenges</span>.
+                    </p>
+                    <p class="text-lg text-muted leading-relaxed">
+                        Beyond coding, I believe in learning by building and sharing knowledge. My mission is to create elegant technology solutions that <span class="text-accent font-semibold">empower lives and uplift communities</span>.
+                    </p>
 
-    <!-- Journey Section -->
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">450+</div>
+                            <div class="text-muted">DSA Problems</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">5+</div>
+                            <div class="text-muted">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">2+</div>
+                            <div class="text-muted">Years Coding</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">100+</div>
+                            <div class="text-muted">Students Mentored</div>
+                        </div>
+                    </div>
+                </div>
 
-    <section id="journey" data-fade>
+                <div class="space-y-6" data-aos="fade-left">
+                    <div class="glass-effect p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-accent mb-4">Quick Facts</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-accent mr-3"></i>
+                                <span class="text-muted">Raipur, Chhattisgarh</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-university text-accent mr-3"></i>
+                                <span class="text-muted">IIT Bhilai - Computer Science</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-code text-accent mr-3"></i>
+                                <span class="text-muted">Full-Stack Development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-heart text-accent mr-3"></i>
+                                <span class="text-muted">Problem Solving & Mentoring</span>
+                            </li>
+                        </ul>
+                    </div>
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">My Journey</h2>
+                    <div class="glass-effect p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-accent mb-4">Interests</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">Web Development</span>
+                            <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">Algorithms</span>
+                            <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">Open Source</span>
+                            <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">Mentoring</span>
+                            <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">Community Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <div class="space-y-4 sm:space-y-6">
+            <!-- Core Concepts -->
+            <div class="mt-16">
+                <div class="glass-effect p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-brain text-accent text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-softText">Core Concepts & Achievements</h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-sitemap text-accent text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-softText mb-2">Data Structures</h4>
+                            <p class="text-sm text-muted">Arrays, LinkedLists, Trees, Graphs, Hash Tables</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-cogs text-accent text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-softText mb-2">Algorithms</h4>
+                            <p class="text-sm text-muted">Sorting, Searching, DP, Greedy, Graph Algorithms</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-server text-accent text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-softText mb-2">System Design</h4>
+                            <p class="text-sm text-muted">OS Concepts, Networking, Database Fundamentals</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-trophy text-accent text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-softText mb-2">Problem Solving</h4>
+                            <p class="text-sm text-muted">450+ DSA Problems, Competitive Programming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
-
-          I come from a modest background with big dreams. My passion for computers sparked early, but it was at IIT Bhilai where I truly dived deep into the world of technology.
-
-        </p>
-
-        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
-
-          I've built projects ranging from portfolio websites to institution-level platforms, mentored budding engineers, and sharpened my problem-solving skills by tackling 450+ DSA challenges. Each line of code tells a story of persistence and curiosity.
-
-        </p>
-
-        <p class="leading-relaxed text-base sm:text-lg text-muted transition-all duration-700 ease-in-out">
-
-          Beyond coding, I believe in learning by building and sharing. My mission is simple — to create elegant tech that empowers lives and uplifts communities.
-
-        </p>
-
-      </div>
-
+            <!-- Coding Platforms -->
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-softText text-center mb-8">Coding Platforms</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="glass-effect px-6 py-4 rounded-xl hover:scale-105 transition-transform">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-code text-accent text-xl"></i>
+                            <div>
+                                <div class="font-semibold text-softText">LeetCode</div>
+                                <div class="text-sm text-muted">450+ Problems Solved</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/roshanraj9136" target="_blank" class="glass-effect px-6 py-4 rounded-xl hover:scale-105 transition-transform">
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-github text-accent text-xl"></i>
+                            <div>
+                                <div class="font-semibold text-softText">GitHub</div>
+                                <div class="text-sm text-muted">Open Source Projects</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-softText mb-4">
+                    Featured <span class="text-accent">Projects</span>
+                </h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-4"></div>
+                <p class="text-xl text-muted">Some things I've built</p>
+            </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-globe text-accent text-2xl"></i>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/KartikeyaNainkhwal/IIT-Bhilai-Meru-Conference" target="_blank" class="text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-softText mb-3">Meru Conference Website</h3>
+                    <p class="text-muted mb-4 leading-relaxed">
+                        Official conference website for Meru 2026 hosted by IIT Bhilai. Built with modern web technologies ensuring responsive design and optimal performance.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">HTML</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">CSS</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">JavaScript</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">Responsive</span>
+                    </div>
+                    <div class="flex items-center text-sm text-muted">
+                        <i class="fas fa-star text-yellow-400 mr-2"></i>
+                        <span>Featured Project</span>
+                    </div>
+                </div>
 
-    <!-- Projects -->
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-user text-accent text-2xl"></i>
+                        <div class="flex space-x-3">
+                            <i class="fab fa-github text-muted text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-softText mb-3">Portfolio Website</h3>
+                    <p class="text-muted mb-4 leading-relaxed">
+                        Personal portfolio showcasing my journey, skills, and projects. Features modern design, smooth animations, and mobile-first approach.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">HTML</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">Tailwind CSS</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">JavaScript</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">AOS</span>
+                    </div>
+                    <div class="flex items-center text-sm text-muted">
+                        <i class="fas fa-mobile-alt text-accent mr-2"></i>
+                        <span>Mobile-First Design</span>
+                    </div>
+                </div>
 
-    <section id="projects" data-fade>
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-heart text-accent text-2xl"></i>
+                        <div class="flex space-x-3">
+                            <i class="fab fa-github text-muted text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-softText mb-3">NSS Events Page</h3>
+                    <p class="text-muted mb-4 leading-relaxed">
+                        Revamped and deployed the NSS IIT Bhilai event updates page. Focused on clarity, accessibility, and responsive design for better user experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">HTML</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">CSS</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">UI/UX</span>
+                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded">Accessibility</span>
+                    </div>
+                    <div class="flex items-center text-sm text-muted">
+                        <i class="fas fa-users text-success mr-2"></i>
+                        <span>Community Impact</span>
+                    </div>
+                </div>
+            </div>
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-6 sm:mb-8 glow-text">Projects</h2>
-
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-
-        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300">
-
-          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">Meru Conference Website</h3>
-
-          <p class="text-muted text-sm sm:text-base mb-3">Built and maintained the official site for Meru 2026 hosted by IIT Bhilai.</p>
-
-          <p class="text-xs sm:text-sm text-gray-400 mb-2">HTML, CSS, JavaScript</p>
-
-          <a href="https://github.com/KartikeyaNainkhwal/IIT-Bhilai-Meru-Conference" target="_blank" class="text-accent text-xs sm:text-sm hover:underline inline-block">GitHub Repo</a>
-
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="https://github.com/roshanraj9136" target="_blank" class="border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-colors">
+                    <i class="fab fa-github mr-2"></i>View More on GitHub
+                </a>
+            </div>
         </div>
-
-        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300">
-
-          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">Portfolio Website</h3>
-
-          <p class="text-muted text-sm sm:text-base mb-3">This very site! Designed to showcase my journey, skills, and work beautifully.</p>
-
-          <p class="text-xs sm:text-sm text-gray-400">HTML, Tailwind CSS</p>
-
-        </div>
-
-        <div class="bg-secondary shadow hover:shadow-2xl p-4 sm:p-6 rounded-lg transition duration-300 sm:col-span-1 md:col-span-2 lg:col-span-1">
-
-          <h3 class="font-bold text-accent text-lg sm:text-xl mb-2">NSS Events Page</h3>
-
-          <p class="text-muted text-sm sm:text-base mb-3">Revamped and deployed the NSS IIT Bhilai event update page for clarity and responsiveness.</p>
-
-          <p class="text-xs sm:text-sm text-gray-400">HTML, CSS</p>
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-softText mb-4">
+                    Work <span class="text-accent">Experience</span>
+                </h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
 
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-accent"></div>
 
-    <!-- Experience -->
+                <div class="space-y-12">
+                    <!-- Experience 1 -->
+                    <div class="flex items-start space-x-8" data-aos="fade-right">
+                        <div class="relative">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
+                                <i class="fas fa-code text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 glass-effect p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-softText">Website Developer</h3>
+                                <span class="text-accent font-medium">2025 - Present</span>
+                            </div>
+                            <h4 class="text-lg text-accent mb-3">Meru Conference, IIT Bhilai 2026</h4>
+                            <ul class="text-muted space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Developed and maintained the official conference website
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Implemented responsive design ensuring cross-device compatibility
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Collaborated with team members to deliver high-quality results
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-    <section id="experience" data-fade>
+                    <!-- Experience 2 -->
+                    <div class="flex items-start space-x-8" data-aos="fade-right" data-aos-delay="100">
+                        <div class="relative">
+                            <div class="w-16 h-16 bg-success rounded-full flex items-center justify-center">
+                                <i class="fas fa-chalkboard-teacher text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 glass-effect p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-softText">Polestar Mentor</h3>
+                                <span class="text-accent font-medium">2024 - 2025</span>
+                            </div>
+                            <h4 class="text-lg text-accent mb-3">Openlink Foundation</h4>
+                            <ul class="text-muted space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Mentored 100+ JEE/NEET aspirants in mathematics and physics
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Developed personalized study plans and problem-solving strategies
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Achieved 85% improvement rate in student performance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Experience</h2>
-
-      <div class="space-y-3 sm:space-y-4">
-
-        <div class="border-l-2 border-accent pl-4 sm:pl-6">
-
-          <h3 class="font-semibold text-softText text-base sm:text-lg">Website Developer</h3>
-
-          <p class="text-muted text-sm sm:text-base">Meru Conference, IIT Bhilai 2026</p>
-
+                    <!-- Experience 3 -->
+                    <div class="flex items-start space-x-8" data-aos="fade-right" data-aos-delay="200">
+                        <div class="relative">
+                            <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-hands-helping text-primary text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 glass-effect p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-softText">NSS Volunteer</h3>
+                                <span class="text-accent font-medium">2023 - Present</span>
+                            </div>
+                            <h4 class="text-lg text-accent mb-3">National Service Scheme, IIT Bhilai</h4>
+                            <ul class="text-muted space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Led community service drives impacting 500+ individuals
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Organized awareness campaigns on health and education
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-accent mr-3 mt-1"></i> Coordinated with local authorities for community development
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="border-l-2 border-accent pl-4 sm:pl-6">
-
-          <h3 class="font-semibold text-softText text-base sm:text-lg">Polestar Mentor</h3>
-
-          <p class="text-muted text-sm sm:text-base">Mentored JEE/NEET aspirants through Openlink Foundation</p>
-
-        </div>
-
-        <div class="border-l-2 border-accent pl-4 sm:pl-6">
-
-          <h3 class="font-semibold text-softText text-base sm:text-lg">NSS Volunteer</h3>
-
-          <p class="text-muted text-sm sm:text-base">Led community drives, awareness campaigns, and events</p>
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-softText mb-4">
+                    Technical <span class="text-accent">Skills</span>
+                </h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-4"></div>
+                <p class="text-xl text-muted">Technologies I work with</p>
+            </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="glass-effect p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-code text-accent text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-softText">Programming</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">C++</span>
+                                <span class="text-accent">90%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">C</span>
+                                <span class="text-accent">85%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">JavaScript</span>
+                                <span class="text-accent">80%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Skills -->
+                <!-- Web Technologies -->
+                <div class="glass-effect p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-globe text-accent text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-softText">Web Tech</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">HTML/CSS</span>
+                                <span class="text-accent">95%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">Tailwind CSS</span>
+                                <span class="text-accent">90%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">Responsive Design</span>
+                                <span class="text-accent">88%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
 
-    <section id="skills" data-fade>
+                    <!-- Technology Icons Grid -->
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="tech-icon text-center p-3 bg-accent/10 rounded-lg hover:bg-accent/20 transition-all">
+                            <i class="fab fa-html5 text-2xl text-orange-500 mb-2"></i>
+                            <div class="text-xs text-muted">HTML5</div>
+                        </div>
+                        <div class="tech-icon text-center p-3 bg-accent/10 rounded-lg hover:bg-accent/20 transition-all">
+                            <i class="fab fa-css3-alt text-2xl text-blue-500 mb-2"></i>
+                            <div class="text-xs text-muted">CSS3</div>
+                        </div>
+                        <div class="tech-icon text-center p-3 bg-accent/10 rounded-lg hover:bg-accent/20 transition-all">
+                            <i class="fab fa-js-square text-2xl text-yellow-400 mb-2"></i>
+                            <div class="text-xs text-muted">JavaScript</div>
+                        </div>
+                    </div>
+                </div>
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Technical Skills</h2>
-
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-muted">
-
-        <div class="space-y-3">
-
-          <div class="border-l-2 border-accent pl-4">
-
-            <strong class="text-softText">Languages:</strong> C, C++
-
-          </div>
-
-          <div class="border-l-2 border-accent pl-4">
-
-            <strong class="text-softText">Web:</strong> HTML, CSS, JavaScript
-
-          </div>
-
+                <!-- Tools & Others -->
+                <div class="glass-effect p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-tools text-accent text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-softText">Tools & Others</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">Git/GitHub</span>
+                                <span class="text-accent">88%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">Problem Solving</span>
+                                <span class="text-accent">92%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-muted">VS Code</span>
+                                <span class="text-accent">85%</span>
+                            </div>
+                            <div class="skill-bar bg-cardBg rounded-full h-2">
+                                <div class="skill-fill bg-accent h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="space-y-3">
-
-          <div class="border-l-2 border-accent pl-4">
-
-            <strong class="text-softText">Tools:</strong> Git, GitHub, Docker
-
-          </div>
-
-          <div class="border-l-2 border-accent pl-4">
-
-            <strong class="text-softText">Concepts:</strong> OS, Networking, Algorithms
-
-          </div>
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-softText mb-4">
+                    Get In <span class="text-accent">Touch</span>
+                </h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-xl text-muted max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
+                </p>
+            </div>
 
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="glass-effect p-6 rounded-xl">
+                        <h3 class="text-2xl font-semibold text-softText mb-6">Let's Connect</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-softText">Email</h4>
+                                    <a href="mailto:roshanraj9136@gmail.com" class="text-accent hover:underline">roshanraj9136@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-github text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-softText">GitHub</h4>
+                                    <a href="https://github.com/roshanraj9136" target="_blank" class="text-accent hover:underline">github.com/roshanraj9136</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-softText">LeetCode</h4>
+                                    <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="text-accent hover:underline">leetcode.com/u/Roshan183729136</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Contact -->
-
-    <section id="contact" data-fade>
-
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent mb-4 sm:mb-6 glow-text">Contact</h2>
-
-      <p class="text-muted mb-2 text-sm sm:text-base">Let's connect and build something amazing.</p>
-
-      <p class="text-sm sm:text-base mb-4">Email: <a href="mailto:roshanraj9136@gmail.com" class="text-accent underline break-all">roshanraj9136@gmail.com</a></p>
-
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 text-accent">
-
-        <a href="https://github.com/roshanraj9136" target="_blank" class="hover:underline text-sm sm:text-base">GitHub</a>
-
-        <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="hover:underline text-sm sm:text-base">LeetCode</a>
-
-      </div>
-
+                <div class="text-center" data-aos="fade-left">
+                    <div class="glass-effect p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold text-softText mb-6">Ready to Work Together?</h3>
+                        <p class="text-muted mb-8 leading-relaxed">
+                            Whether you have a project in mind, need a dedicated developer, or just want to say hello, I'd love to hear from you!
+                        </p>
+                        <div class="space-y-4">
+                            <a href="mailto:roshanraj9136@gmail.com" class="block bg-accent text-primary px-8 py-3 rounded-lg font-semibold hover:bg-accentDark transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </a>
+                            <a href="#contact" class="block border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-colors">
+                                <i class="fas fa-user mr-2"></i>View Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-  </main>
-
-
-
-  <footer class="text-center text-xs py-4 sm:py-6 bg-secondary border-t border-gray-700 text-muted">
-
-    © 2025 Roshan Raj — Built with Tailwind CSS & AOS
-
-  </footer>
-
-
-
-  <!-- Scroll Progress Bar -->
-
-  <div class="fixed top-0 left-0 h-1 bg-accent z-50" id="scroll-progress"></div>
-
-
-
-  <script>
-
-    AOS.init({ 
-
-      duration: 1000,
-
-      once: true,
-
-      offset: 50
-
-    });
-
-
-
-    // Mobile menu functionality
-
-    const hamburger = document.getElementById('hamburger');
-
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    const mobileOverlay = document.getElementById('mobileOverlay');
-
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-
-
-    function toggleMobileMenu() {
-
-      hamburger.classList.toggle('active');
-
-      mobileMenu.classList.toggle('open');
-
-      mobileOverlay.classList.toggle('hidden');
-
-      document.body.classList.toggle('overflow-hidden');
-
-    }
-
-
-
-    function closeMobileMenu() {
-
-      hamburger.classList.remove('active');
-
-      mobileMenu.classList.remove('open');
-
-      mobileOverlay.classList.add('hidden');
-
-      document.body.classList.remove('overflow-hidden');
-
-    }
-
-
-
-    hamburger.addEventListener('click', toggleMobileMenu);
-
-    mobileOverlay.addEventListener('click', closeMobileMenu);
-
-    
-
-    mobileLinks.forEach(link => {
-
-      link.addEventListener('click', closeMobileMenu);
-
-    });
-
-
-
-    // Scroll progress bar
-
-    window.addEventListener('scroll', () => {
-
-      const scrollProgress = document.getElementById('scroll-progress');
-
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-
-      const progress = (window.scrollY / totalHeight) * 100;
-
-      scrollProgress.style.width = progress + '%';
-
-    });
-
-
-
-    // Parallax effect on scroll for hero section (disabled on mobile for performance)
-
-    if (window.innerWidth > 768) {
-
-      window.addEventListener('scroll', () => {
-
-        const hero = document.getElementById('hero');
-
-        if (hero) {
-
-          const offset = window.scrollY;
-
-          hero.style.transform = translateY(${offset * 0.1}px);
-
+    <!-- Footer -->
+    <footer class="py-12 border-t border-accent/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-accent">&lt;</span>
+                    <span class="text-softText">Roshan Raj</span>
+                    <span class="text-accent">&gt;</span>
+                </div>
+                <p class="text-muted mb-6">Built with passion, coded with precision.</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://github.com/roshanraj9136" target="_blank" class="text-muted hover:text-accent transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/Roshan183729136" target="_blank" class="text-muted hover:text-accent transition-colors">
+                        <i class="fas fa-code text-2xl"></i>
+                    </a>
+                    <a href="mailto:roshanraj9136@gmail.com" class="text-muted hover:text-accent transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-sm text-muted">
+                    © 2025 Roshan Raj.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-primary rounded-full shadow-lg hover:bg-accentDark transition-all transform scale-0 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Typed.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            new Typed("#typed-text", {
+                strings: [
+                    "Full-Stack Developer",
+                    "Problem Solver",
+                    "Tech Enthusiast",
+                    "Community Builder"
+                ],
+                typeSpeed: 80,
+                backSpeed: 60,
+                backDelay: 2000,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|'
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(17, 34, 64, 0.9)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(17, 34, 64, 0.3)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.style.display = 'block';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+            } else {
+                mobileMenu.style.display = 'none';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                isMenuOpen = false;
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.style.transform = 'scale(1)';
+            } else {
+                scrollTopBtn.style.transform = 'scale(0)';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-accent');
+                link.classList.add('text-softText');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-softText');
+                    link.classList.add('text-accent');
+                }
+            });
+        });
+
+        // Animate skill bars when in view
+        const skillBars = document.querySelectorAll('.skill-fill');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0%';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 200);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        skillBars.forEach(bar => {
+            skillObserver.observe(bar);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Particle effect on mouse move (optional enhancement)
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.98) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-1 h-1 bg-accent rounded-full pointer-events-none z-10';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            document.body.appendChild(particle);
+
+            particle.animate([{
+                opacity: 1,
+                transform: 'scale(1)'
+            }, {
+                opacity: 0,
+                transform: 'scale(0)'
+            }], {
+                duration: 1000,
+                easing: 'ease-out'
+            }).onfinish = () => particle.remove();
         }
 
-      });
+        // Tech icon hover effects
+        document.querySelectorAll('.tech-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.1) rotateY(10deg)';
+            });
 
-    }
-
-
-
-    // Fade in elements on scroll
-
-    const fadeEls = document.querySelectorAll('[data-fade]');
-
-    const observer = new IntersectionObserver((entries) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
-
-        }
-
-      });
-
-    }, { threshold: 0.1 });
-
-
-
-    fadeEls.forEach(el => {
-
-      el.classList.add('opacity-0', 'translate-y-10', 'transition', 'duration-700');
-
-      observer.observe(el);
-
-    });
-
-
-
-    // Handle window resize
-
-    window.addEventListener('resize', () => {
-
-      if (window.innerWidth >= 768) {
-
-        closeMobileMenu();
-
-      }
-
-    });
-
-  </script>
-
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1) rotateY(0deg)';
+            });
+        });
+    </script>
 </body>
-
-
 
 </html>
